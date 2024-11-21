@@ -3,14 +3,19 @@ from django.urls import path
 from collegeapp import views
 
 urlpatterns = [
+    path('',views.index,name='index'),
     path('dep_add',views.dep_add,name='dep_add'),
-    path('index',views.index,name='index'),
+    path('courses',views.courses,name='courses'),
+    path('about',views.about,name='about'),
+    path('contact',views.contact,name='contact'),
     path('reg_teacher',views.reg_teacher,name='reg_teacher'),
     path('reg_student',views.reg_student,name='reg_student'),
-    path('',views.mainhome,name='mainhome'),
+    path('home',views.home,name='home'),
     path('viewstudent',views.viewstudent,name="viewstudent"),
     path("approve/<int:aid>",views.approve,name='approve'),
     path('logins',views.logins,name='logins'),
+    path('signup_choice/', views.signup_choice, name='signup_choice'),
+
     path('approved_stview',views.approved_stview,name='approved_stview'),
     path("teacherhome",views.teacherhome,name='techerhome'),
     path('studenthome',views.studenthome,name='studenthome'),

@@ -19,6 +19,14 @@ def dep_add(request):
 
 def index(request):
     return render(request,'index.html')
+
+def about(request):
+    return render (request,'about.html')
+
+def courses(request):
+    return render(request,'courses.html')
+def contact(request):
+    return render(request,'contact.html')
 # reister Teacher
 def reg_teacher(request):
     if request.method=='POST':
@@ -41,8 +49,8 @@ def reg_teacher(request):
         x=Department.objects.all()
         return render(request,"reg_teacher.html",{'x1':x})
     
-def mainhome(request):
-    return render(request,'mainhome.html')
+def home(request):
+    return render(request,'home.html')
 # REGISTER STUDENT
 def reg_student(request):
     if request.method=='POST':
@@ -102,6 +110,12 @@ def logins(request):
             return HttpResponse("NOT VALID")
     else:
         return render(request,'logins.html')
+    
+# signup choice 
+def signup_choice(request):
+    return render(request, 'signup_choice.html')
+
+
 #  Approved student
 def approved_stview(request):
     x=User.objects.filter(is_active=1,usertype='Student')
